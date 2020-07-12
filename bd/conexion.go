@@ -3,13 +3,12 @@ package bd
 import (
 	"context"
 	"go.mongodb.org/mongo-driver/mongo"
-	"log"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"log"
 )
 
 var MongoC = ConectarBD()
 var clientOptions = options.Client().ApplyURI("mongodb+srv://Valian:saicoma2020@cluster0.jjxle.mongodb.net/test")
-
 
 //ConectarBD es la funcion para conectar la base de datos
 func ConectarBD() *mongo.Client {
@@ -26,6 +25,7 @@ func ConectarBD() *mongo.Client {
 	log.Println("Coneccion exitosa a la DB")
 	return client
 }
+
 /*CheckConnection hace ping a la db*/
 func CheckConnection() int {
 	err := MongoC.Ping(context.TODO(), nil)
@@ -35,5 +35,3 @@ func CheckConnection() int {
 	}
 	return 1
 }
-
-
