@@ -4,9 +4,6 @@ import (
 	"context"
 	"go.mongodb.org/mongo-driver/mongo"
 	"log"
-	_ "log"
-
-	_ "go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
@@ -38,3 +35,5 @@ func CheckConnection() int {
 	}
 	return 1
 }
+
+

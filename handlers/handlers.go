@@ -4,6 +4,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 	"github.com/valianx/clon-twitter/middlew"
+	"github.com/valianx/clon-twitter/routers"
 	"log"
 	"net/http"
 	"os"
@@ -12,7 +13,7 @@ import (
 func Manejadores() {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/registro", ChequeoDB(routers.Registro)).Methods("POST")
+	router.HandleFunc("/registro", middlew.ChequeoDB(routers.Registro)).Methods("POST")
 
 
 
